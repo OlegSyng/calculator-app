@@ -1,0 +1,23 @@
+{
+  "name": "calculator-app-main",
+  "version": "1.0.0",
+  "description": "Design preview for the Calculator app coding challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlegSyng/calculator-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OlegSyng/calculator-app/issues"
+  },
+  "homepage": "https://github.com/OlegSyng/calculator-app#readme",
+  "devDependencies": {
+    "less": "^4.1.3"
+  }
+}

@@ -2,25 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
-<body>
-
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+<body class="main">
+  <section class="calculator-wrapper">
+    <div class="header">
+        <h1 class="header__logo">calc</h1>
+        <div class="header__theme">
+          <h2 class="header__theme-text">theme</h2>
+          <div class="header__theme-input">
+              <label for="theme">2</label>
+              <input type="range" id="theme" name="theme" min="1" max="3" value="1">
+          </div>
+        </div>
+    </div>
+    <div class="output">
+      <p class="output__text"></p>
+    </div>
+    <div class="input">
+      <input class="input__btn input__btn--regular" type="button" value="7">
+      <input class="input__btn input__btn--regular" type="button" value="8">
+      <input class="input__btn input__btn--regular" type="button" value="9">
+      <input class="input__btn input__btn--blue" type="button" value="DEL">
+      <input class="input__btn input__btn--regular" type="button" value="4">
+      <input class="input__btn input__btn--regular" type="button" value="5">
+      <input class="input__btn input__btn--regular" type="button" value="6">
+      <input class="input__btn input__btn--regular" type="button" value="+">
+      <input class="input__btn input__btn--regular" type="button" value="1">
+      <input class="input__btn input__btn--regular" type="button" value="2">
+      <input class="input__btn input__btn--regular" type="button" value="3">
+      <input class="input__btn input__btn--regular" type="button" value="-">
+      <input class="input__btn input__btn--regular" type="button" value=".">
+      <input class="input__btn input__btn--regular" type="button" value="0">
+      <input class="input__btn input__btn--regular" type="button" value="/">
+      <input class="input__btn input__btn--regular" type="button" value="x">
+      <input class="input__btn input__btn--blue-big" type="button" value="RESET">
+      <input class="input__btn input__btn--red-big" type="button" value="=">
+    </div>
+  </section>
+  <script src="app.js"></script>
 </body>
 </html>
