@@ -61,7 +61,57 @@ body {
   border-radius: 0.5rem;
   outline: none;
   border: none;
-  box-shadow: inset 1rem red;
+  box-shadow: inset 0px -4px var(--key-light--shadow);
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+  font-size: 3.2rem;
+  color: var(--txt-dark);
+  text-align: center;
+  transition: all 0.1s;
+  line-height: normal;
+  cursor: pointer;
+}
+@media screen and (min-width: 820px) {
+  .input__btn {
+    border-radius: 1rem;
+    font-size: 4rem;
+  }
+}
+.input__btn:active {
+  box-shadow: inset 0px 2px var(--key-light--shadow);
+  font-size: 3rem;
+}
+.input__btn:focus-visible {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+.input__btn:visited {
+  outline: none;
+}
+.input__btn--blue,
+.input__btn--blue-big {
+  background-color: var(--key-normal--background);
+  box-shadow: inset 0px -4px var(--key-normal--shadow);
+  color: var(--key-light--background);
+  font-size: 2rem;
+}
+.input__btn--blue:active,
+.input__btn--blue-big:active {
+  box-shadow: inset 0px 2px var(--key-normal--shadow);
+  font-size: 1.8rem;
+}
+.input__btn--blue-big {
+  grid-column: 1 / span 2;
+}
+.input__btn--red-big {
+  grid-column: 3 / span 2;
+  background-color: var(--key-red--background);
+  box-shadow: inset 0px -4px var(--key-red--shadow);
+  color: var(--key-light--background);
+  font-size: 2rem;
+}
+.input__btn--red-big:active {
+  box-shadow: inset 0px 2px var(--key-red--shadow);
+  font-size: 1.8rem;
 }
 .header {
   display: block;
@@ -94,6 +144,7 @@ body {
   text-transform: uppercase;
   color: var(--txt-light);
   letter-spacing: 0.1rem;
+  line-height: 2;
 }
 .header__theme-input {
   display: inline;
@@ -149,7 +200,8 @@ body {
   cursor: pointer;
 }
 .output {
-  display: block;
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 15%;
   margin-bottom: 2rem;
@@ -159,24 +211,34 @@ body {
 .output p {
   display: block;
   width: 80%;
-  height: 100%;
   margin: 0 auto;
   text-align: end;
+  color: var(--txt-light);
+  font-size: 4rem;
 }
 .input {
   display: grid;
   grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 1rem;
-  grid-row-gap: 1rem;
+  grid-column-gap: 1.2rem;
+  grid-row-gap: 1.2rem;
   width: 100%;
   height: calc(70%);
   padding: 2.5rem;
   background-color: var(--bg-keypad);
   border-radius: 1rem;
 }
+@media screen and (min-width: 820px) {
+  .input {
+    grid-column-gap: 2.3rem;
+    grid-row-gap: 2.7rem;
+    padding: 3rem;
+  }
+}
 .main {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   width: 100vw;
   background-color: var(--bg-main);
@@ -184,7 +246,13 @@ body {
 .calculator-wrapper {
   display: flex;
   flex-direction: column;
-  max-width: 37.5rem;
-  height: 100%;
+  width: 37.5rem;
+  height: 66.7rem;
   padding: 2rem;
+}
+@media screen and (min-width: 820px) {
+  .calculator-wrapper {
+    width: 60rem;
+    height: 80rem;
+  }
 }

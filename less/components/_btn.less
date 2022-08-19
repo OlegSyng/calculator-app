@@ -3,5 +3,64 @@
     border-radius: 0.5rem;
     outline: none;
     border: none;
-    box-shadow: inset 1rem red;
+    box-shadow: inset 0px -4px var(--key-light--shadow);
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 3.2rem;
+    color: var(--txt-dark);
+    text-align: center;
+    transition: all 0.1s;
+    line-height: normal;
+    cursor: pointer;
+
+    @media screen and (min-width: 820px) {
+        border-radius: 1rem;
+        font-size: 4rem;
+    }
+
+    &:active {
+        box-shadow: inset 0px 2px var(--key-light--shadow);
+        font-size: 3rem;
+    }
+
+    &:focus-visible {
+        outline: -webkit-focus-ring-color auto 1px;
+    }
+
+    &:visited {
+        outline: none;
+    }
+
+
+    &--blue,
+    &--blue-big {
+        background-color: var(--key-normal--background);
+        box-shadow: inset 0px -4px var(--key-normal--shadow);
+        color: var(--key-light--background);
+        font-size: 2rem; 
+
+        &:active {
+            box-shadow: inset 0px 2px var(--key-normal--shadow);
+            font-size: 1.8rem;
+        }
+    }
+
+    &--blue-big {
+        grid-column: 1 / span 2;
+    }
+
+    &--red-big {
+        grid-column: 3 / span 2;
+        background-color: var(--key-red--background);
+        box-shadow: inset 0px -4px var(--key-red--shadow);
+        color: var(--key-light--background);
+        font-size: 2rem;
+
+        &:active {
+            box-shadow: inset 0px 2px var(--key-red--shadow);
+            font-size: 1.8rem;
+        }
+    }
 }
+
+
