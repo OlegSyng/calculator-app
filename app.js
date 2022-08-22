@@ -52,7 +52,7 @@ const reset = () => {
 
 const result = (func) => {
     let manipulation = null;
-    const standartAcrion = (manipulation) => {
+    const standartAction = (manipulation) => {
         outputText.innerHTML = manipulation;
         userInput = [];
         memo1 = "";
@@ -61,19 +61,19 @@ const result = (func) => {
     switch(func) {
         case 'add':
             manipulation = Number(memo2) + Number(memo1);
-            standartAcrion(manipulation);
+            standartAction(manipulation);
             break;
         case 'substract':
             manipulation = Number(memo2) - Number(memo1);
-            standartAcrion(manipulation);
+            standartAction(manipulation);
             break;
         case 'multiply':
             manipulation = Number(memo2) * Number(memo1);
-            standartAcrion(manipulation);
+            standartAction(manipulation);
             break;
         case 'devide':
             manipulation = Number(memo2) / Number(memo1);
-            standartAcrion(manipulation);
+            standartAction(manipulation);
             break;
     }
 }
@@ -95,10 +95,15 @@ const inputFunc = (value) => {
             outputText.innerHTML = userInput.join("");
             memo1 = userInput.join("");
             break;
-        case (value === 'del' && userInput.length > 0):
+        case (value === 'del'): //&& userInput.length > 0
             userInput.pop();
             outputText.innerHTML = userInput.join("");
             memo1 = userInput.join(""); 
+            if(memo2) {
+                memo2 = memo2.toString();
+                memo2 = memo2.slice(0, -1)
+                outputText.innerHTML = memo2;
+            }
             break; 
         case (value === 'decimal'):
             userInput.push(".");
@@ -124,112 +129,6 @@ const inputFunc = (value) => {
             break;
     }   
 }
-
-
-
-
-
-
-
-
-
-
-
-// const outputText = document.querySelector('.output__text');
-
-// let userInput = [];
-// let func = null;
-// let memo1 = null;
-// let memo2 = null;
-
-// const updateMemo = (digits) => {
-//     localStorage.setItem('input', digits);
-// }
-// const preserveMemo = (digits) => {
-//     if(userInput.length > 0) {
-//         localStorage.setItem('input2', digits);
-//     }
-// }
-// const reset = () => { 
-//     userInput = [];
-//     outputText.innerHTML = "";
-//     localStorage.removeItem('input');
-// }
-
-// const result = (func) => {
-//     let manipulation = null;
-//     const input2 = Number(localStorage.getItem('input2'));
-//     const input = Number(localStorage.getItem('input'));
-//     const standartAcrion = (manipulation) => {
-//         outputText.innerHTML = manipulation;
-//         localStorage.setItem('input2', manipulation.toString());
-//         userInput = [];
-//         localStorage.removeItem('input');
-//     }
-//     switch(func) {
-//         case 'add':
-//             manipulation = input2 + input;
-//             standartAcrion(manipulation);
-//             break;
-//         case 'substract':
-//             manipulation = input2 - input;
-//             standartAcrion(manipulation);
-//             break;
-//         case 'multiply':
-//             manipulation = input2 * input;
-//             standartAcrion(manipulation);
-//             break;
-//         case 'devide':
-//             manipulation = input2 / input;
-//             standartAcrion(manipulation);
-//             break;
-//     }
-// }
-
-// const inputFunc = (value) => {
-//     const functionality = (value) => {
-//         if(func === null) {
-//             func = value;
-//             preserveMemo(userInput.join(""));
-//             reset();
-//         } else {
-//             result(func);
-//             func = value;
-//         }
-//     }
-//     switch(true) {
-//         case (typeof value === 'number'):
-//             userInput.push(value);
-//             outputText.innerHTML = userInput.join("");
-//             updateMemo(userInput.join(""));
-//             break;
-//         case (value === 'del' && userInput.length > 0):
-//             userInput.pop();
-//             outputText.innerHTML = userInput.join("");
-//             updateMemo(userInput.join(""))
-//             break; 
-//         case (value === 'decimal'):
-//             userInput.push(".");
-//             outputText.innerHTML = userInput.join("");
-//             updateMemo(userInput.join(""));
-//             break;
-//         case (value === 'reset'):
-//             reset();
-//             localStorage.removeItem('input2');
-//             break;
-//         case (value === 'result'):
-//             if(func !== null) {
-//                 result(func);
-//             } else {
-//                 outputText.innerHTML = 'Please input value';
-//             }
-//             break;
-//         case (value === 'add' || value === 'substract' || value === 'multiply' || value === 'devide'):
-//             functionality(value);
-//             break;
-//     }   
-// }
-
 
 
 
